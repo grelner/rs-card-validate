@@ -30,7 +30,7 @@ lazy_static! {
 }
 
 /// Card type. Maps recognized cards, and validates their pattern and length.
-#[derive(PartialEq, Clone)]
+#[derive(PartialEq, Clone, Debug)]
 pub enum Type {
     // Debit
     VisaElectron,
@@ -141,7 +141,7 @@ impl Type {
 }
 
 /// Card validation utility. Used to validate a provided card number (length and Luhn checksum).
-#[derive(PartialEq, Clone)]
+#[derive(PartialEq, Clone, Debug)]
 pub struct Validate {
     pub card_type: Type,
 }
